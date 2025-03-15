@@ -6,7 +6,7 @@ source ./logs/err.sh
 
 
 tool_install() {
-    [ $2 -eq 1 ] && verbose $1 || silent $1
+    [ $2 -eq 1 ] && echo "verbose install for $1" || echo "verbose install for $2"
 }
 
 silent() {
