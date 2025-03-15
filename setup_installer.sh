@@ -1,10 +1,13 @@
 #!/bin/bash
+source ./logs/inf.sh
+source ./logs/success.sh
+source ./logs/warn.sh
+source ./logs/err.sh
 
+[ "$#" -eq 0 ] && prompt_err "Veuillez passer deux arguments" && exit 1
 
-[ "$#" -eq 0 ] && exit 1
-
-[ "$1" = "custom" ] && bash ./custom_install.sh && exit 1
-bash ./simple_install.sh && exit 1
+[ "$1" = "custom" ] && bash ./custom_install.sh $2 && exit 1
+bash ./simple_install.sh $2 && exit 1
 
 
 # Simple
