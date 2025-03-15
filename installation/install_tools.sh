@@ -9,6 +9,5 @@ tools_install() {
 
         prompt_installing_tool "installing '${args[$i]}'" &&
         tool_install ${args[$i]} ${!#}
-
     done
 }
