@@ -3,8 +3,9 @@ source ./logs/inf.sh
 source ./logs/success.sh
 source ./logs/warn.sh
 source ./logs/err.sh
+source ./logs/usage.sh
 
-[ "$#" -eq 0 ] && prompt_err "Veuillez passer deux arguments" && exit 1
+[ "$#" -eq 0 ] || [ "$1" = "help" ] && prompt_usage && exit 1
 
 [ "$1" = "custom" ] && bash ./custom_install.sh $2 && exit 1
 bash ./simple_install.sh $2 && exit 1
