@@ -11,7 +11,7 @@ if [[ "$1" == "help" || ( "$1" != "simple" && "$1" != "custom" ) || ( "$2" != "s
 fi
 
 [ "$1" = "custom" ] && bash ./custom_install.sh $2 && exit 1
-bash ./simple_install.sh $2 && exit 1
+bash ./simple_install.sh $2
 
 
 
