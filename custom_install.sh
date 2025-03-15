@@ -1,2 +1,1 @@
-source=./simple_install
-
+source ./simple_install

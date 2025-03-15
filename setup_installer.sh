@@ -3,11 +3,9 @@
 
 [ "$#" -eq 0 ] && exit 1
 
-if [ ]; then
-    bash ./simple_install.sh
-else
-    bash ./custom_install.sh
-fi
+[ "$1" = "custom" ] && bash ./custom_install.sh && exit 1
+bash ./simple_install.sh && exit 1
+
 
 # Simple
     # tools a installer par défaut
