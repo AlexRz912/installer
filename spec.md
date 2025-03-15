@@ -13,10 +13,12 @@
 
 # Custom
     - tools a installer par défaut
-            # nano
-            # vim
-            # vscode
-            # git
+        # nano -apt install
+        # vim -apt install
+        # vscode -curl
+        # git -apt install
+    # ssh à gérer
+
     # Affichage de l'étape du minimal setup
         # Verbeux : Affichage des messages pour chaque étapes et conclusion -> inf; warn; error
         # Silent : Conclusion de l'installation pour chaque étapes -> inf; warn; error
