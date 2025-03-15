@@ -10,7 +10,7 @@ tool_install() {
 }
 
 silent() {
-    [ "$1" = "code" ] && curl -O "" > /dev/null || apt-get install -y "$1" > /dev/null
+    [ "$1" = "code" ] && curl -O "" > "./tmp/install_$1" || apt-get install -y "$1" > "./tmp/install_$1"
     which $1 >/dev/null && prompt_success "$1 successfully installed" || prompt_err "$1 installation failed"    
 }
 
