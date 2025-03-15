@@ -1,3 +1,5 @@
-git add . ; git commit -m "exercice" ; git push origin master
+[ "$#" -eq 0 ] && exit 1
+
+git add . ; git commit -m "$1" ; git push origin master
 
 
