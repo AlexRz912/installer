@@ -5,7 +5,3 @@ start() {
         bash "./$i"
     done
 }
-
-my_function() {
-    echo "import fonctionnel"
-}
