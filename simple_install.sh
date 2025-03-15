@@ -1,5 +1,11 @@
 #!/bin/bash
 
-source ./utils/script_utils.sh
+source ./utils/disable_standard_log_util.sh
+# source ./utils/script_utils.sh
 
-my_function
+enable_standard_logging $1
+
+[ $? -eq 0 ] && enabled=0 || enabled=1
+
+
+
