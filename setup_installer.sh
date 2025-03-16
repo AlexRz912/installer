@@ -1,7 +1,7 @@
 #!/bin/bash
 source ./logs/usage.sh
 
-if [[( "$1" != "simple" && "$1" != "custom" ) || ( "$2" != "silent" && "$2" != "verbose" ) ]]; then
+if [[ "$1" == "help" || ( "$1" != "simple" && "$1" != "custom" ) || ( "$2" != "silent" && "$2" != "verbose" ) ]]; then
     prompt_usage
     exit 1
 fi
