@@ -10,7 +10,7 @@ tools_install() {
     mkdir ./tmp
     for ((i=0; i<${#args[@]}-1; i++)); do
         if which ${args[$i]} > /dev/null; then
-            prompt_already_installed "tools ${args[$i]} is already installed"
+            prompt_already_installed "tool '${args[$i]}' is already installed"
         else
             prompt_installing_tool "installing '${args[$i]}'" &&
             tool_install ${args[$i]} ${!#}
@@ -19,26 +19,27 @@ tools_install() {
     rm -rf ./tmp
 }
 
-handle_user_choice() {
+zshell_install() {
+    
     while :; do
+        zshell_install_question
         choice=$(get_user_choice)
-        choice=$(choice_downcase)
+
         is_user_choice_correct $choice
-        echo $choice
-        if [ $? -eq 0 ]; then
+
+        if [ "$?" -eq 0 ]; then
+            start_install_on_choice $choice $1
             break # ou return 1 selon la logique souhaitée
         else
-            prompt_err "incorrect choice"
+            prompt_err "incorrect choice, pls provide y or n"
             continue
         fi
         break
     done
 }
 
-zshell_install() {
-    zshell_install_question
-    choice=$(handle_user_choice)
-    accept_zshell_install $choice
+start_install_on_choice() {
+    [ "${1,,}" = "y" ] && tools_install "zsh" "$2" || return 0
 }
 
 

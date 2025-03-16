@@ -12,16 +12,14 @@ accept_zshell_install() {
 
 get_user_choice() {
     read user_choice
-}
-
-
-choice_downcase() {
-    echo $1 | tr '[:upper:]' '[:lower:]'
+    echo "$user_choice"
 }
 
 is_user_choice_correct() {
-    [[ $1 =~ ^(y|n)$ ]] && return 0 || return 1
+    [[ "${1,,}" =~ ^(y|n)$ ]]
+    return $?
 }
+
 # which_shell_question() {
 # 
 # }
