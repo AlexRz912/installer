@@ -6,19 +6,26 @@ source ./logs/err.sh
 curl_install_list=(code)
 
 tool_install() {
+    
     [ $2 -eq 0 || $1 = "git" ] && verbose $1 || silent $1
 }
 
 silent() {
-    [ $1 = "code" ] install_vscode
-    sudo apt-get install -y "$1" > "./tmp/install_$1"
-    which $1 >/dev/null && prompt_success "$1 successfully installed" || prompt_err "$1 installation failed"    
+    if [ "$1" = "code" ]; then
+        install_vscode > "./tmp/install_$1"
+    else 
+        sudo apt-get install -y "$1" > "./tmp/install_$1"
+        which $1 >/dev/null && prompt_success "$1 successfully installed" || prompt_err "$1 installation failed"
+    fi
 }
 
 verbose() {
-    [ $1 = "code" ] install_vscode
-    sudo apt-get install $1 
-    which $1 >/dev/null && prompt_success "$1 successfully installed" || prompt_err "$1 installation failed"
+    if [ "$1" = "code" ]; then
+        install_vscode
+    else
+        sudo apt-get install $1 
+        which $1 >/dev/null && prompt_success "$1 successfully installed" || prompt_err "$1 installation failed"
+    fi
 }
 
 install_vscode() {
