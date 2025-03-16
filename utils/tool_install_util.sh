@@ -16,7 +16,7 @@ silent() {
 }
 
 verbose() {
-    [ $1 = "code" ]
+    [ $1 = "code" ] install_vscode
     sudo apt-get install $1 
     which $1 >/dev/null && prompt_success "$1 successfully installed" || prompt_err "$1 installation failed"
 }

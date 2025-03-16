@@ -3,7 +3,7 @@
 source ./utils/question_util.sh
 
 zshell_install_question() {
-    prompt_question "Do you wish to install zsh? [Y/n]"
+    prompt_question "Do you wish to install oh-my-zsh? [Y/n]"
 }
 
 accept_zshell_install() {

@@ -43,6 +43,7 @@ zshell_install() {
 start_install_on_choice() {
     if [ "${1,,}" = "y" ]; then 
     tools_install "zsh" "$2"
+    install_oh_my_zsh 
     switch_default_shell zsh
     custom_shell_rc zshrc
     else 
@@ -56,5 +57,9 @@ switch_default_shell() {
 
 custom_shell_rc() {
     cat ".$1" > "$HOME/.$1"
+}
+
+install_oh_my_zsh() {
+    
 }
 
