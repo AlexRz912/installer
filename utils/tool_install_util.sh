@@ -1,12 +1,11 @@
 #!/bin/bash
 
-source ./installation/prompt_installing_tool.sh
 source ./logs/success.sh
 source ./logs/err.sh
 
 
 tool_install() {
-    [ $2 -eq 0 ] && verbose $1 || silent $1
+    [ $2 -eq 0 || $1 = "git" ] && verbose $1 || silent $1
 }
 
 silent() {

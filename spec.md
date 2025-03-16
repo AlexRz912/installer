@@ -10,6 +10,8 @@
     - Silent : Conclusion de l'installation pour chaque étapes -> inf; warn; error
         -> *exception ssh*
         -> voir si c'est possible d'automatiser le push sur gitlab en cli
+    -> color green
+    -> color orange
 
 # Custom
     - tools a installer par défaut
