@@ -31,8 +31,6 @@ zshell_install() {
 
         if [ "$?" -eq 0 ]; then
             start_install_on_choice $choice $1
-            
-            
             break
         else
             prompt_err "incorrect choice, pls provide y or n"
